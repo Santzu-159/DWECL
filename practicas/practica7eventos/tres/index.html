@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        window.onload=function(){
+            let t = document.getElementById("texto");
+            let btn1 = document.getElementById("b1");
+            let btn2 = document.getElementById("b2");
+
+            t.addEventListener("mouseover",eTexto);
+            t.addEventListener("mouseout",eTexto);
+
+            btn1.addEventListener("click",controlarClick);
+            btn2.addEventListener("click",controlarClick);
+        }
+
+        function eTexto(evento){
+            if(evento.type=="mouseover"){
+                evento.target.style.color="red";
+            }else if(evento.type == "mouseout"){
+                evento.target.style.color="black";
+            }
+        }
+
+        function controlarClick(evento){
+            let idBoton = evento.target.id; //guardamos el id del boton (target) seleccionado
+            alert(idBoton);
+        }
+    
+    </script>
+    <p id="texto">Texto</p>
+
+    <input type='button' id="b1" value="Boton 1"/>
+    <input type='button' id="b2" value="Boton 2"/>
+
+</body>
+</html>

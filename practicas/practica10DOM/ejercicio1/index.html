@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Ejercicio 1 - DOM básico</title>
+</head>
+
+<body>
+    <script>
+        window.onload=function(){
+            let enlaces = document.getElementsByTagName("a"); //todos los enlaces
+            console.log("Numeros de enlaces: "+enlaces.length);//numero de enlaces
+
+            let pIndice = (enlaces.length-1)-1; //obtenemos el indice del penúltimo enlace
+            console.log("Dirección del penúltimo enlace: "+enlaces[pIndice].href); 
+
+            let enlacesPrueba = document.querySelectorAll("a[href='http://prueba']"); // querySelectorAll --> consulta sobre todas las etiquetas y sus atributos
+            console.log("Numero de enlaces que enlazan a http://prueba: "+enlacesPrueba.length);
+
+            let tercerParrafo = document.getElementsByTagName("p")[2]; //obtenemos el tercer parrafo
+            let enlacesTercerP = tercerParrafo.getElementsByTagName("a");
+            console.log("Número de enlaces del tercer párrafo: "+enlacesTercerP.length);
+
+        }    
+    </script>
+	<p>
+    	Lorem ipsum dolor sit amet,
+    	<a href="http://prueba">consectetuer adipiscing elit</a>
+    	. Sed mattis enim vitae orci.
+    	<a href="http://prueba2">Fusce porta</a>
+    	. Duis pellentesque.
+	</p>
+
+	<p>
+    	Aenean at nisl. Maecenas egestas dapibus odio.
+    	<a href="http://prueba">Ut bibendum blandit est</a>
+    	. Curabitur vestibulum.
+        <a href="http://prueba3">consequat sem quis massa</a>
+        . Donec aliquam euismod.
+	</p>
+
+	<p>
+    	Donec sagittis,
+    	<a href="http://prueba">aliquam leo odio sed sem</a>
+    	. Quisque eget.
+    	<a href="http://prueba4">egestas</a>
+    	adipiscing ligula.
+    	<a href="http://prueba5">Sed non lectus non est pellentesque</a>
+    	auctor.
+	</p>
+</body>
+</html>

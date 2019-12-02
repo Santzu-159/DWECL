@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang ="es">
+<head>
+    <title>Formulario</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>VALIDACIÓN DE FORMULARIOS CON HTML5</title>
+</head>
+<body>
+    <script src="codigo.js"></script>
+    <style>
+        .error {
+            border: solid 2px #FF0000;
+        }
+    </style>
+    <h1>Formulario</h1>
+    <form action="procesar.php" method="post" id="miFormulario">
+        <table>
+            <tr>
+                <td>Nombre*: </td>
+                <td>
+                <input type="text" name="nombre" id="nombre" maxlength=15 pattern="[a-zA-Z]{2,15}" title="Introduce entre 2 y 15 letras." required/>
+                </td>
+             </tr>
+            <tr>
+                <td>Edad*: </td>
+                <td>
+                    <input type="number" name="edad" id="edad" max="100" min="18" required />
+                </td>
+            </tr>
+
+            <tr>
+                <td>Telefono*: </td>
+                <td>
+                    <input type="text" name="telefono" id="telefono" pattern="[0-9]{9}" title="Número de 9 cifras." required/>
+                </td>
+            </tr>
+            <tr>
+                <td>Rango: </td>
+                <td>
+                   <input type="range" name="rango" id="rango" min="0" max="100" value="50" step="5" onchange="console.log(value);"/>
+                </td>
+            </tr>    
+
+        </table>
+        <p>
+            <input type="button" value="Enviar" id="enviar" onclick="validar()"/>
+            <input type="reset" value="Borrar" id="borrar" />
+        </p>
+      <p id="mensajeError"></p>
+    </form>
+</body>
+</html>

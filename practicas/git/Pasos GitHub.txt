@@ -1,0 +1,35 @@
+﻿1- Crear repositorio local
+	git init
+2- Añadir al repositorio local los archivos
+	git add .
+3- Conectarse al repositorio online
+	git remote add origin urlRepositorio
+(Nos pedira logearnos)
+4.- Hacer el commit
+	git commit -m "comentario"
+5- Subir los archivos del local al online
+	git push -u origin master
+
+---------------------------------
+1- Descargar archivos del repositorio (machacando los otros)
+	git pull origin master
+
+
+
+--------------------------------
+1- Ver las ramas que tenemos:
+	git branch
+
+
+
+------------------------------------------
+1- Ver el log
+	git log
+
+2- Clonar repositorio (no hace falta hacer git init):
+	git clone urlRepositorio
+
+---------------------------------------------
+Fallo por primera subida:
+
+git pull --rebase origin master
