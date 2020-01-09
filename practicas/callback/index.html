@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function loadScript(src, callback){
+
+            conlose.log("2");
+            let script = document.createElement('script');
+            script.src = src;
+            conlose.log("3");
+            script.onload = () => callback (script);
+            document.head.append(script);
+            conlose.log("4");
+            
+        }
+
+        conlose.log("1");
+        loadScript("codigo.js",function(){
+            console.log("Hemos terminado de cargar el script.");
+            escribirHola();
+        });
+
+        escribirHola(); //Esta peta por que el Navegador va tan rapido que no le da 
+                        //tiempo a cargar el script para llamar a la funcion
+    </script>
+</body>
+</html>
