@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <alumnos>
 	<alumno>
-    	<nom>Maria</nom>
+    	<nombre>Maria</nombre>
     	<apellido>Garcia</apellido>
     	<nota convocatoria="PAF2">8.3</nota>
 	</alumno>
