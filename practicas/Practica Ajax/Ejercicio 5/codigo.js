@@ -19,7 +19,7 @@ function obtenerRespuesta() {
 
   let respuesta = JSON.parse(httpRequest.responseText);
   let container = document.createElement("div");
-  container.className='container mt-5 border border-dark text-center';
+  container.className='container mt-5 text-center';
   let lista = document.createElement("ul");
 
   for (let i = 0; i < respuesta.personas.length; i++) {
@@ -42,5 +42,5 @@ function obtenerElemeto(persona) {
     ", <b>Domicilio:</b> " +
     persona.ciudad;
   return item;
-  
+
 }
