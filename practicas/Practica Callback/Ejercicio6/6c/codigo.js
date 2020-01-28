@@ -3,9 +3,8 @@ const posts = [
     {title: "Post2", body: "This is post two"}
 ];
 
-async function getPosts(){
-    let resultado = await ejecutar();
-    console.log("patata");
+function getPosts(){
+   
     setTimeout(()=> 
     {
         let output =``;
@@ -19,10 +18,12 @@ async function getPosts(){
 }
 
 function createPost (newPost) {
-    setTimeout( () => { posts.push(newPost) } , 2000);
+    return new Promise((resolve) => {
+        setTimeout( () => {resolve(posts.push(newPost))} , 2000);
+    })
 }
 
-function ejecutar(){
-    
-    createPost({title: "Post3", body: "This is post three"});
+async function ejecutar(){
+    let resultado = await createPost({title: "Post3", body: "This is post three"});
+    getPosts();
 }
