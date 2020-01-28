@@ -12,4 +12,4 @@ function promiseAll(){
 
 function promiseRace(){
     Promise.race([p1,p2,p3]).then(values => console.log(values)); //muestra la que antes termina de ejecutarse
-}
+}                                                                                 
