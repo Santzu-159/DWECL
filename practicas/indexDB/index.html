@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>IndexeedDB</title>
+</head>
+<body>
+
+    <script>
+    
+    let nombreDB=document.getElementById("txtDB");
+    let versionDB=document.getElementById("versionDB");
+
+    document.getElementById(btnCreateDB).addEventListener("click",()=>{
+        crearBaseDatos(nombreDB.value, versionDB.value);
+    });
+
+    function crearBaseDatos(){
+        if(!indexedDB){
+            console.log("IndexedDB no soportada");
+        }else{
+            let dataBase = indexedDB.open(nombreDB,Number.parseInt(versionDB));
+            dataBase.onupgradeneeded = e =>{ 
+                let result = e.target.result;
+                console.log("Me estoy actualizando")};
+            dataBase.onsuccess = e=>{ 
+                let db = e.target.db;
+                console.log("Todo bien")};
+            dataBase.onerror = e=>{ console.log("Tenemos un problema")};
+        }
+    }
+     </script>
+
+</body>
+</html>
