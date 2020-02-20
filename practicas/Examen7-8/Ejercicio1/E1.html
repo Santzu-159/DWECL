@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+            
+        const doSomething = () => {
+
+            let a = Math.random() * 10;
+            let p = new Promise ((resolve,reject)=>{
+                if (a < 5) {
+                     reject(new Error("Número es demasiado pequeño"));
+                } else {
+                    resolve();
+          }
+         });
+        return p;
+        };
+
+        doSomething().then(result => console.log(result));
+        doSomething().catch(error => console.log(error));
+
+    </script>
+
+        
+    </script>
+
+</body>
+
+</html>
