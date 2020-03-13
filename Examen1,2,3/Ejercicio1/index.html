@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+    <body>
+
+        <script>
+            let fechas=[];
+            let fecha = new Date();
+            let interruptor; //variable interruptor para la segunda parte
+            let intervalo = setInterval(anadirFecha,3000);
+
+            function anadirFecha(){    
+                if(fechas.length>=4){
+                        clearInterval(intervalo);
+                        comprobarTamanio();
+                        intervalo = setInterval(comprobarTamanio,3000);
+                }
+                else{
+                        fechas.push(fecha);
+                        console.log("+++Añadir fecha");
+                        console.log(fechas);
+                        console.log("+++FIN añadir fecha");
+                    }
+            }
+
+            function comprobarTamanio(){
+                
+                if(fechas.length>=4){
+                    console.log ("Comprobar tamaño:"+fechas.length);          
+                    clearInterval(intervalo);
+                    anadirFecha();
+                    intervalo = setInterval(anadirFecha,3000);
+                    console.log("+++FIN comprobar tamaño");
+                }
+                else{
+
+                    fechas.delete();
+                    console.log("-----------BORRADO-------");
+                    console.log(fechas);
+
+                }
+            }
+
+        </script>
+    
+    </body>
+</html>
