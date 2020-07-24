@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <button type="button" id="miboton1" value="Abrir Ventana" onclick="abrirVentana()">Abrir Ventana</button>
+    <button type="button" id="miboton2" value="Cerrar Ventana" onclick="cerrarVentana()">Cerrar Ventana</button>
+    <button type="button" id="miboton3" value="Disminuir Ventana" onclick="disminuirVentana()">Disminuir Ventana</button>
+    <button type="button" id="miboton4" value="Posicionar Ventana" onclick="posicionarVentana()">Posicionar Ventana</button>
+    <button type="button" id="miboton5" value="Desplazar Ventana" onclick="desplazarVentana()">Desplazar Ventana</button>  
+
+    <script>
+        let ventana;
+         function abrirVentana(){
+             ventana = window.open("","width=200px","height=200px");
+         }
+
+         function cerrarVentana(){
+             ventana.close();
+         }
+
+         function disminuirVentana(){
+             ventana.resizeBy(-40,-40);
+         }
+
+         function posicionarVentana(){
+             ventana.moveTo(0,0);
+         }
+
+         function desplazarVentana(){
+             ventana.moveBy(20,20);
+         }
+
+    </script>
+</body>
+</html>

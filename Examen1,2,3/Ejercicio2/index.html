@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let mayorFecha = (["2015/02/01","2015/02/02","2015/01/03"]);
+        let mayor= new Date(mayorFecha[0]);
+        mayorFecha.sort();
+        
+        for (let i = 0; i<mayorFecha.length; i++){
+
+            let fecha = new Date(mayorFecha[i]);
+            if(fecha > mayor){
+            console.log(mayor);
+            }
+        }
+
+    </script>
+</body>
+</html>
